@@ -30,8 +30,8 @@ class AddCar extends Component {
         payload.id = this.props.carTotal + 1
         delete payload.open
         console.log("THE CAR", payload)
-        this.props.addCar
-        this.setState({ open: false }) 
+        // this.props.addCar
+        // this.setState({ open: false }) 
         // also add this.setState to close the dialog
     }
 

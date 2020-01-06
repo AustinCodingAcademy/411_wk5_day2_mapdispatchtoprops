@@ -4,6 +4,7 @@ const user = (state = null) => state
 
 // add switch statements in here
 const cars = (state = [], action) => {
+    console.log(action);
     switch(action.type) {
         case 'ADD_CAR':
             return [ ...state, action.value ]

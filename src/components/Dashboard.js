@@ -8,9 +8,9 @@ import {
     TableRow
 } from '@material-ui/core'
 import DeleteIcon from '@material-ui/icons/Delete'
-import Chart from './Chart'
-import Total from './Total'
-import AddCar from './AddCar'
+import Chart from '../containers/Chart'
+import Total from '../containers/Total'
+import AddCar from '../containers/AddCar'
  
 const Dashboard = (props) => {
     return (
@@ -33,7 +33,7 @@ const Dashboard = (props) => {
                     </TableRow>
                 </TableHead>
                 <TableBody>
-                {props.cars.map((car, idx) => (
+                {props.cars.map((car, id) => (
                     <TableRow key={car.id}>
                         <TableCell component="th" scope="row">
                             {car.id}
@@ -44,7 +44,7 @@ const Dashboard = (props) => {
                         <TableCell>{car["horsepower"]}</TableCell>
                         <TableCell>
                             <DeleteIcon
-                                // add onClick method here
+                                onClick={(id) => props.removeCar(id)}
                                 className="icon text-red" />
                         </TableCell>
                     </TableRow>

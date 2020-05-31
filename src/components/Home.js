@@ -1,7 +1,6 @@
 import React from 'react'
 import { Card, CardContent, CardActions, Divider } from '@material-ui/core'
 import { Link } from 'react-router-dom'
-import cars from '../cars.json' // remove this
 
 const Home = (props) => {
     return (

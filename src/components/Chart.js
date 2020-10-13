@@ -2,6 +2,15 @@ import React from 'react'
 import PieChart from 'react-minimal-pie-chart';
 
 const Chart = (props) => {
+    let overCounter = 0
+    let underCounter = 0
+    props.cars.map(car => {
+        if (car.horsepower < 200) {
+            underCounter ++
+        } else if (car.horsepower >= 200) {
+            overCounter++
+        }
+    })
     // create variable "over" with all the cars whos horsepower is >= 200
     // create variable "under" with all the cars whos horsepower is < 200
 
@@ -9,8 +18,8 @@ const Chart = (props) => {
         <div>
             <PieChart style={{ width: '200px' }}
                 data={[
-                    { title: 'Over', value: 10, color: '#C13C37' },
-                    { title: 'Under', value: 15, color: '#E38627' },
+                    { title: 'Over', value: overCounter, color: '#C13C37' },
+                    { title: 'Under', value: underCounter, color: '#E38627' },
                 ]}
                 label
                 labelStyle={{

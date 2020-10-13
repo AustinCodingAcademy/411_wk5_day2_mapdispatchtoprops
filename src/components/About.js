@@ -34,7 +34,7 @@ class About extends Component {
                         get sued by the real&nbsp; 
                         <a style={{ color: 'mediumblue' }}
                         href="https://www.cars.com"
-                        target="_blank">Cars.com</a>
+                        target="_blank" rel="noopener noreferrer">Cars.com</a>
                         &nbsp;but we won't worry too much about that. We've provided a 
                         link to the actual cars.com above and we did not 
                         receive any money from them to do so. Although, there's 

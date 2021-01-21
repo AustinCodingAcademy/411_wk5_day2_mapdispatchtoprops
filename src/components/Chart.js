@@ -2,8 +2,8 @@ import React from 'react'
 import PieChart from 'react-minimal-pie-chart';
 
 const Chart = (props) => {
-    // create variable "over" with all the cars whos horsepower is >= 200
-    // create variable "under" with all the cars whos horsepower is < 200
+    // create variable "over" with all the cars whose horsepower is >= 200
+    // create variable "under" with all the cars whose horsepower is < 200
 
     return (
         <div>

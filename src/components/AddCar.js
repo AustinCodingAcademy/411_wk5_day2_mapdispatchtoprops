@@ -23,7 +23,7 @@ class AddCar extends Component {
         newState[e.target.id] = e.target.value
         this.setState(newState)
     }
-
+    //How to do this with functional programming?
     handleSubmit = (e) => {
         e.preventDefault()
         const payload = { ...this.state }

@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 
-import AddCar from '../components/AddCar'
+import AddCar from '../components/AddCarComponent'
 import { addCar, removeCar } from '../redux/actions'
 
 //connect is looking for memory allotment called dispatch,
@@ -20,5 +20,5 @@ const mapDispatchToProps = (dispatch) => {
 //mapDispatchToProps needs to be wrapped up in the connect,
 //like mapStateToProps
 //well crap, I had done this last part differently
-//do I need (AddCar) in this???
-export default connect(mapStateToProps, matchDispatchToProps)(AddCar)
+//I don't quite understand why there are two sets of parentheses after this connect function/ method
+export default connect(null, matchDispatchToProps)(AddCar)

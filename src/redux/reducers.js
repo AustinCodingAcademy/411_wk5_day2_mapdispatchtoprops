@@ -8,7 +8,8 @@ const cars = (state = [], action) => {
     //from the action creator functions (?)
     switch(action.type) {
         case "ADD_CAR" : 
-            return action.value
+            //must return state
+            return [action.value, ...state]
             //now I'm guessing 
             //that we're going to add a third parameter (No, we have the action)
             //that will be the value (CHECK!)

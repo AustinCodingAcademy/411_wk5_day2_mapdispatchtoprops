@@ -8,6 +8,9 @@ import {
 } from '@material-ui/core'
 
 class AddCar extends Component {
+    //why doesn't this have super with props?
+    //why is this so different from the video?
+    //I don't understand the differences, therefore I can't really code along
     state = {
         open: false,
         name: '',
@@ -32,6 +35,10 @@ class AddCar extends Component {
         console.log("THE CAR", payload)
         // add this.props.addCar function here
         // also add this.setState to close the dialog
+        //------my stuff follow with textbook video ------
+        this.setState({
+            newCar:""
+        })
     }
 
     componentDidUpdate = (prevProps, prevState) => {
@@ -44,7 +51,7 @@ class AddCar extends Component {
             })
         }
     }
-
+    //would it be worthwhile to utilize code snippets?
     render() {
         return (
             <Fragment>

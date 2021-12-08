@@ -19,7 +19,7 @@ Clone this repo and run `npm i` and then `npm start`
 * The first thing we need to do is create an `actions.js` file underneath our "redux" folder.
 
 ##### addCar
------------------------
+
 * Now, let's create an `action creator` called "addCar" that takes one parameter called "car". Have it return an object whose type is "ADD_CAR" and its value is the car parameter.
 
 * Now we need to go to our `reducers.js` file and update the "cars" reducer. First, give it a second parameter called "action". This will represent whichever action is passed in on dispatch. Now it's time to change this function and give it a switch statement. You can reference prior material for this but ultimately we want to switch on `(action.type)`, provide a case for `ADD_CAR` that returns a copy of the state array plus the new car (`[ ...state, action.value]`) and handle the default case that simply returns the state.
@@ -31,7 +31,7 @@ Clone this repo and run `npm i` and then `npm start`
 * Import the `{ connect }` function at the top of the file like we have in the other containers. Then, import the `AddCar` component from the components file. We also need to import the action so import `{ addCar }` from the "redux/actions" file.
 
 * Now we are going to write a `mapDispatchToProps` function. Remember, it takes one argument called "dispatch" and it returns an object whose keys are the props you want to pass. For us we will create a key called "addCar" and we'll set its value to a function that dispatches our "addCar" action creator. It looks like this: `(car) => dispatch(addCar(car))`. The car on the left will be passed from our component when we call this function. It will then be passed onto the inner "addCar" function.
-
+-----------------------
 * Remember to "connect" this function to the AddCar component and export it. A little tip this time, since there is no mapStateToProps function we need to pass `null` in its place. It's expected as the first parameter of the `connect` function. So our export will look like this: `export default connect(null, mapDispatchToProps)(AddCar)`
 
 * Now we will go to the `Dashboard` component and swap out the import at the top so that the "AddCar" component references the new "container" instead of the regular "component".

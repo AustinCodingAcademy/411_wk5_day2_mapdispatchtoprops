@@ -1,0 +1,112 @@
+from class video 12/3/21
+
+----- Redux actions & action creators ----
+1. An action is an object
+2. Two properties: 
+    * type 
+        - all caps
+        - underscore
+        - tells reducter what to run
+    * value
+        - what value you want to change
+        - also called payload
+3. Action creator is a function that takes in a value and returns the action object
+
+    export const addCar = (newCar) => {
+        return {
+            type: 'ADD_CAR',
+            value: newCar
+        }
+    }
+
+4. Possible actions: add, remove, update, set user, etc.
+5. When removing, likely will take in an index
+----- Reducers ------
+6. Could use if/ else, but demonstrated as switch 
+7. Set up default value/ parameter for state
+
+    const = cars = (state = []) => state
+
+8. Take in second parameter, an action  
+
+    const = cars = (state = [], action) =>
+
+    * in our case, this action is an action creator
+9. Switch statement, looks for action.type
+    * action.type for addCar() is ADD_CAR
+
+    switch(action.type) {
+
+    }
+
+10. First case returns spread and action.value.
+    *Takes in existing state
+    *takes everything out and puts it in a new array
+    *and adds our new action and value
+
+    switch(action.type) {
+        case 'ADD_CAR':
+            return [...state, action.value]
+    }
+
+11. Second case, REMOVE_CAR
+    *makes a copy to mutate
+    *bc we never want to mutate the original state
+
+    case 'REMOVE_CAR':
+        const newState = [...state]
+
+12. Remove current value and splice in new value
+
+        newState.splice(action.value, 1)
+        return newState
+
+        *this would normally be a find funciton to find by index and return new
+        * but in this example, we're only dealing with one element in the array
+
+13. Always have default 
+
+    default:
+        return state
+
+-------matchDispatchToProps-------------
+14. matchDispatchToProps is going to allow us access to the function(s)/ methods to manipulate state
+    *from the Reducers
+
+15. Bring in Home component
+
+    import Home from '../components/Home'
+
+16. Bring in the two actions (which are functions) we created
+
+    import { addCar, removeCar } from './actions'
+
+17. Pass the dispate functin a a properties
+
+    const matchDispatchToProps = (dispatch) => {
+
+    }
+
+18. Return an object with a key, 
+    * takes in car, which is the value from the addCar function (see step 3)
+    * calls the addCarfunction with that value, car, passed in
+    * gets dispatched by the dispatch function
+
+    const matchDispatchToProps = (dispatch) => {
+        return (
+            addCar: (car) => dispatch(addCar(car))
+        )
+    }
+
+19. Also returns removeCar, which does similar
+
+            removeCar: (index) => dispatch(removeCar(index))
+
+20. Export matchDispatchToProps as second value in connect function
+
+    export dfault connect(mapStateToProps, matchDispatchToProps)(Home)
+--------
+21. 
+
+
+

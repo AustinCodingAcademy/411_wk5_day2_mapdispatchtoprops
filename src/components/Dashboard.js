@@ -11,7 +11,7 @@ import DeleteIcon from '@material-ui/icons/Delete'
 
 import Chart from './Chart'
 import Total from './Total'
-import AddCar from './AddCar'
+import AddCar from './AddCarComponent'
  
 const Dashboard = (props) => {
     return (

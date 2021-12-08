@@ -7,8 +7,10 @@ const cars = (state = [], action) => {
     //the action is the returned object (?)
     //from the action creator functions (?)
     switch(action.type) {
+        //ADD_CAR is an expression
         case "ADD_CAR" : 
             //must return state
+            //...state is a spread operator
             return [action.value, ...state]
             //now I'm guessing 
             //that we're going to add a third parameter (No, we have the action)

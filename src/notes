@@ -69,8 +69,8 @@ from class video 12/3/21
     default:
         return state
 
--------matchDispatchToProps-------------
-14. matchDispatchToProps is going to allow us access to the function(s)/ methods to manipulate state
+-------mapDispatchToProps-------------
+14. mapDispatchToProps is going to allow us access to the function(s)/ methods to manipulate state
     *from the Reducers
 
 15. Bring in Home component
@@ -83,7 +83,7 @@ from class video 12/3/21
 
 17. Pass the dispate functin a a properties
 
-    const matchDispatchToProps = (dispatch) => {
+    const mapDispatchToProps = (dispatch) => {
 
     }
 
@@ -92,7 +92,7 @@ from class video 12/3/21
     * calls the addCarfunction with that value, car, passed in
     * gets dispatched by the dispatch function
 
-    const matchDispatchToProps = (dispatch) => {
+    const mapDispatchToProps = (dispatch) => {
         return (
             addCar: (car) => dispatch(addCar(car))
         )
@@ -104,9 +104,50 @@ from class video 12/3/21
 
 20. Export matchDispatchToProps as second value in connect function
 
-    export dfault connect(mapStateToProps, matchDispatchToProps)(Home)
+    export dfault connect(mapStateToProps, mapDispatchToProps)(Home)
 --------
-21. 
+
+From class Tuesday 12/7/21
+1. Kinda the inverse of mapStateToProps
+
+----addCar action--------
+2. Actions are functions that return an object 
+    export const addCar = (car) => {
+        return {
+            type: "ADD_CAR",
+            value: car
+        }
+    }
+3. Another way to write it:
+    * without return, change curly braces to parentheses
+    * implicit
+    * only when you're doing one action
+    * e.g., can't use with a console log
+export const addCar = (car) => (
+     {
+        type: "ADD_CAR",
+       
+        value: car
+    }
+)
+4. Reducers destrutured parameter
+const cars = (state = [], {type, value}) => {
+    switch(type) {
+        case "ADD_CAR" : 
+            return [value, ...state]
+        
+        case "REMOVE_CAR" :
+            let newState = [...state]
+            newState.splice(action.value, 1)
+            return newState
+        default :
+            return state
+    }
+}
+5. After importing the container to Dashboard, I'm very confused.
+    *I think this is because the video is different from this project
+    * and the example from class was changed to functional programming from class-based
+    * try watching class video from Tue 12/7 from about min 45 (apprx 7:30pm)
 
 
 

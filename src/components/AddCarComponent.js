@@ -28,17 +28,18 @@ class AddCar extends Component {
     }
     //How to do this with functional programming?
     handleSubmit = (e) => {
+        // console.log("props in handleSubmit: ", props)
         e.preventDefault()
         const payload = { ...this.state }
         payload.id = this.props.carTotal + 1
         delete payload.open
         console.log("THE CAR", payload)
-        // add this.props.addCar function here
+        console.log("this.props in handleSubmit: ", this.props)
+         // add this.props.addCar function here
         // also add this.setState to close the dialog
-        //------my stuff follow with textbook video ------
-        this.setState({
-            newCar:""
-        })
+        this.props.addCar(payload)
+        this.setState({ open: false })
+       
     }
 
     componentDidUpdate = (prevProps, prevState) => {

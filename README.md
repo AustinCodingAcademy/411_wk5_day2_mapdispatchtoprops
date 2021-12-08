@@ -31,7 +31,7 @@ Clone this repo and run `npm i` and then `npm start`
 * Import the `{ connect }` function at the top of the file like we have in the other containers. Then, import the `AddCar` component from the components file. We also need to import the action so import `{ addCar }` from the "redux/actions" file.
 
 * Now we are going to write a `mapDispatchToProps` function. Remember, it takes one argument called "dispatch" and it returns an object whose keys are the props you want to pass. For us we will create a key called "addCar" and we'll set its value to a function that dispatches our "addCar" action creator. It looks like this: `(car) => dispatch(addCar(car))`. The car on the left will be passed from our component when we call this function. It will then be passed onto the inner "addCar" function.
------------------------
+
 * Remember to "connect" this function to the AddCar component and export it. A little tip this time, since there is no mapStateToProps function we need to pass `null` in its place. It's expected as the first parameter of the `connect` function. So our export will look like this: `export default connect(null, mapDispatchToProps)(AddCar)`
 
 * Now we will go to the `Dashboard` component and swap out the import at the top so that the "AddCar" component references the new "container" instead of the regular "component".
@@ -41,7 +41,7 @@ Clone this repo and run `npm i` and then `npm start`
 ##### removeCar
 
 * Ok we can add cars to our table but now we need to be able to remove them. There's a delete column on the table with a little trash can icon and when we click that we're going to want to remove an item from the list. The first step is adding a new action. Hopefully we're getting some of this repetion into our heads. 
-
+-----------------------
 * Go to `redux/actions.js` and create a new function called `removeCar`. You can copy paste directly from the `addCar` function however we want to change the parameter from "car" to "index" in both places. Also, (this may seem like a given) change the type to "REMOVE_CAR".
     * Why are we changing "car" to "index"? Because that's an easy way to remove an item from an array. If I know its index, I can `splice` it. So this time we are going to pass an "index" value to the "removeCar" prop instead of a car object.
 

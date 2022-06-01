@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container, Paper, Chip } from '@material-ui/core';
+import { Container, Paper, Chip } from '@mui/material';
 import cars from '../cars.json' // remove this
 
 const Car = (props) => {

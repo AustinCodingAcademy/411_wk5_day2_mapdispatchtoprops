@@ -6,8 +6,8 @@ import {
     TableCell,
     TableHead,
     TableRow
-} from '@material-ui/core'
-import DeleteIcon from '@material-ui/icons/Delete'
+} from '@mui/material'
+import DeleteIcon from '@mui/icons-material/Delete'
 import Chart from './Chart'
 import Total from './Total'
 import AddCar from './AddCar'

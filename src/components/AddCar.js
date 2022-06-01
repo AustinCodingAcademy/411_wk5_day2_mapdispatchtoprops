@@ -5,7 +5,7 @@ import {
     Dialog,
     DialogContent,
     DialogTitle
-} from '@material-ui/core'
+} from '@mui/material'
 
 class AddCar extends Component {
     state = {
